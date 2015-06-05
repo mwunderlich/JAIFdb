@@ -1,7 +1,9 @@
-package com.martinwunderlich.nlp.arg.aifdb.graph;
+package com.martinwunderlich.nlp.arg.aifdb.graph.test;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.martinwunderlich.nlp.arg.aifdb.graph.AIFdbArgumentMap;
 
 public class JSONTest {
 
