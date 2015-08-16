@@ -14,20 +14,36 @@
  * See the GNU Lesser General Public License for more details. You should have received a copy
  * of the GNU Lesser General Public License along with this library. If not, see http://www.gnu.org/licenses/.
  **************************************************************************************************************/
-package com.martinwunderlich.nlp.arg.aifdb.graph;
+package com.martinwunderlich.nlp.arg.aifdb.util;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.commons.io.FileUtils;
+
+import com.martinwunderlich.nlp.arg.aifdb.AIFdbArgumentMap;
+import com.martinwunderlich.nlp.arg.aifdb.graph.AIFdbNode;
+import com.martinwunderlich.nlp.arg.aifdb.graph.NODE_TYPES;
 
 /**
- * Lists all the available node types in the AIFdb.
+ * Static utility class to provide various helper functions.
  * 
  * @author Martin Wunderlich (martin@wunderlich.com)
  *
  */
-public enum NODE_TYPES {
-	I,
-	RA,
-	CA,
-	L,
-	YA,
-	TA,
-	MA
+public class AIFdbArgumentMapUtil {
+
+	public static void printNodesToFile(List<AIFdbArgumentMap> list, NODE_TYPES type, String outfilePath) throws IOException
+	{
+		StringBuilder builder = new StringBuilder();
+		
+		for(AIFdbArgumentMap map : list) {
+			for(AIFdbNode node : map.getNodes())
+				if(node.getType().equals(type))
+					builder.append(node.getText() + "\n");
+		}
+		
+		FileUtils.writeStringToFile(new File(outfilePath), builder.toString());
+	}
 }
