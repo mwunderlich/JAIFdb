@@ -97,8 +97,10 @@ public class AIFdbArgumentMap {
 			else
 				node.setIsPremise(false);
 			
-			if(!this.fromIDs.contains(id))
+			if(this.toIDs.contains(id))
 				node.setIsConclusion(true);
+			else
+				node.setIsConclusion(false);
 		}
 	}
 
