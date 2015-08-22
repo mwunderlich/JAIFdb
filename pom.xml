@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.martinwunderlich.nlp.arg</groupId>
   <artifactId>com.martinwunderlich.nlp.arg.aifdb</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2-SNAPSHOT</version>
   <name>JAIFdb</name>
   <description>A Java wrapper for AIFdb resources.</description>
   
